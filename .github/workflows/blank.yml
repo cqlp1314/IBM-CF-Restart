@@ -18,11 +18,6 @@ jobs:
 
     - name: Install CF CLI
       run: |
-        curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github&version=v6" | tar -zx
-        sudo mv cf /usr/local/bin
-      
-    - name: Login CF
-      run: cf l -a https://api.${{ secrets.RGN }}.cf.cloud.ibm.com login -u ${{ secrets.MAIL }} -p ${{ secrets.PWD }}
-      
-    - name: Restart CF APP
-      run: cf rs ${{ secrets.CFNAME }}
+        echo "tic"
+        sleep 30
+        echo "toc"
