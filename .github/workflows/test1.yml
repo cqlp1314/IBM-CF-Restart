@@ -34,6 +34,7 @@ jobs:
         run: |
           for i in {1..3};do
           abc=secrets.test$i
-          echo this is ${{ secrets['TEST$i'] }} time;
+          a=TEST1
+          echo this is ${{ secrets['$a'] }} time;
           sleep 1
           done
