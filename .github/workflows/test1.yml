@@ -34,6 +34,6 @@ jobs:
         run: |
           for i in {1..3};do
           abc=secrets.test$i
-          echo this is ${{ $1 }} time;
+          echo this is ${{ "$i" }} time;
           sleep 3
           done
