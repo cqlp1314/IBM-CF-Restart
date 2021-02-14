@@ -39,7 +39,9 @@ jobs:
           echo ["$a"]
           eval echo ['\"$a\"']
           echo test
-          eval echo ['$a']
+          eval echo ['$a'] > tmp.txt
+          echo -
+          cat tmp.txt
           eval echo this is ${{ secrets['$a'] }} time;
           b=$(eval ${{ secrets['$a'] }})
           echo $b
