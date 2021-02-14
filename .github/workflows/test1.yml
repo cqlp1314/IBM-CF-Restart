@@ -37,6 +37,6 @@ jobs:
           a=TEST1
           echo $a
           echo ["$a"]
-          echo this is ${{ secrets["TEST1"] }} time;
+          echo this is ${{ secrets['"$a"'] }} time;
           sleep 1
           done
