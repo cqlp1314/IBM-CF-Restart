@@ -48,5 +48,7 @@ jobs:
           c=${{ secrets['"$a"'] }}
           echo c:$c
           echo d:['"$a"']
+          site=test.com
+          echo 'visit:"'"$site"'"'
           sleep 1
           done
