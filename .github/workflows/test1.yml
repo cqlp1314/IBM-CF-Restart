@@ -38,6 +38,9 @@ jobs:
           echo $a
           echo ["$a"]
           eval echo ['\"$a\"']
-          echo this is ${{ secrets['\"$a\"'] }} time;
+          echo test
+          eval echo this is ${{ secrets['$a'] }} time;
+          b=eval ${{ secrets['$a'] }}
+          echo $b
           sleep 1
           done
