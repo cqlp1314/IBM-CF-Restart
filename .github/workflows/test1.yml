@@ -45,7 +45,7 @@ jobs:
           eval echo this is ${{ secrets['$a'] }} time;
           b=$(eval ${{ secrets['$a'] }})
           echo $b
-          c=${{ eval secrets['$a'] }}
+          c=${{ secrets[eval '$a'] }}
           echo c:$c
           sleep 1
           done
