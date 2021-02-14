@@ -46,6 +46,6 @@ jobs:
           b=$(eval ${{ secrets['$a'] }})
           echo $b
           c=${{ secrets[eval '$a'] }}
-          echo c:$c
+          echo $c
           sleep 1
           done
