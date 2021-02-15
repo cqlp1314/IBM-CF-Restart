@@ -60,6 +60,6 @@ jobs:
           echo h:$h
           echo f:f
           i=$f0$f$f1$g
-          echo i:$i
+          echo i:$(i)
           sleep 1
           done
