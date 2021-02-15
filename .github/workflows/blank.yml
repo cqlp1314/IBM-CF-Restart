@@ -32,4 +32,5 @@ jobs:
 
     - name: Install CF CLI
       run: |
+        chmod +x deploy.sh
         ./deploy.sh
