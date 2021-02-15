@@ -54,7 +54,7 @@ jobs:
           echo e:$e
           f0="$"
           f="{{ secrets"
-          f1=[\'$a"
+          f1="[\'$a"
           g="\'] }}"
           echo $f0$f$f1$g
           echo h:$h
