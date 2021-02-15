@@ -1,3 +1,3 @@
-for in {1..3};do
+for i in {1..3};do
 echo ${region$i};
 done
