@@ -52,5 +52,7 @@ jobs:
           echo 'visit:"'"$site"'"'
           e=${{ secrets['TEST1'] }}
           echo e:$e
+          f=$(echo ${{ secrets[\'$a\'] }})
+          echo f:f
           sleep 1
           done
