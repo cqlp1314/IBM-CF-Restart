@@ -55,6 +55,7 @@ jobs:
           f="${{ secrets[\'$a"
           g="\'] }}"
           h=$f$g
+          echo $f$g
           echo h:$h
           echo f:f
           sleep 1
