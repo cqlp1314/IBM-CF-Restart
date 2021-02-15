@@ -63,5 +63,7 @@ jobs:
           echo i:${i}
           j=$i
           echo j:$j
+          [[ "$j" == "${{ secrets['TEST1'] }}" ]] && echo "equal" || echo not equal 
+          [[ "$j" == "$e" ]] && echo "equal" || echo not equal
           sleep 1
           done
