@@ -32,4 +32,4 @@ jobs:
 
     - name: Install CF CLI
       run: |
-        echo region1
+        echo thans.$region1.com
