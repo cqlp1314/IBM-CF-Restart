@@ -60,6 +60,8 @@ jobs:
           echo h:$h
           echo f:f
           i=$f0$f$f1$g
-          echo i:$(i)
+          echo i:${i}
+          j=$i
+          echo j:$j
           sleep 1
           done
