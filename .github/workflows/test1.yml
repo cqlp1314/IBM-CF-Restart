@@ -56,13 +56,13 @@ jobs:
           f="{{ secrets"
           f1="['TEST$i"
           g="'] }}"
-          echo $($f0$f$f1$g)
+          echo $f0$f$f1$g
           echo h:$h
           echo f:f
-          i=$($f0$f$f1$g)
-          echo i:${i}
+          i=$f0$f$f1$g
+          echo i:"${i}"
           j=$i
-          echo j:$j
+          echo j:"$j"
           [ "$j" = "${{ secrets['TEST1'] }}" ] && echo "equal" || echo not equal 
           [ "$j" = "$e" ] && echo "equal" || echo not equal
           echo "${{ secrets['TEST1'] }}"
