@@ -1,4 +1,5 @@
 #!/bin/bash
 for i in {1..3};do
-echo ${region$i};
+region=region${i}
+echo ${region};
 done
