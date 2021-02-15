@@ -36,10 +36,10 @@ jobs:
          sudo mv cf /usr/local/bin
          for i in {1..3};do
          region=region${i}
-         accout=accout${i}
+         account=account${i}
          passwd=passwd${i}
          appname=appname${i}
-         cf l -a https://api.${!region}.cf.cloud.ibm.com login -u ${!accout} -p ${!passwd}
+         cf l -a https://api.${!region}.cf.cloud.ibm.com login -u ${!account} -p ${!passwd}
          cf rs ${!appname}
          sleep 601
          done
