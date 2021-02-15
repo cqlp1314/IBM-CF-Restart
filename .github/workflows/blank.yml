@@ -32,7 +32,4 @@ jobs:
 
     - name: Install CF CLI
       run: |
-        for i in {1..3};do
-        region=region$i
-        echo "${region"$i"}";
-        done
+        ./deploy.sh
