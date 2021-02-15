@@ -32,15 +32,13 @@ jobs:
 
     - name: Install CF CLI
       run: |
-         for i in {1..3}
-         do
+         curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github&version=v6" | tar -zx
+         sudo mv cf /usr/local/bin
+         for i in {1..3};do
          region=region${i}
          accout=accout${i}
          passwd=passwd${i}
          appname=appname${i}
-         curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github&version=v6" | tar -zx
-         sudo mv cf /usr/local/bin
-         for i in {1..3};do
          cf l -a https://api.${!region}.cf.cloud.ibm.com login -u ${!accout} -p ${!passwd}
          cf rs ${!appname}
          sleep 601
