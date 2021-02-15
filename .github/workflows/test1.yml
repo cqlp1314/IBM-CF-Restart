@@ -50,6 +50,8 @@ jobs:
           echo d:['"$a"']
           site=test.com
           echo 'visit:"'"$site"'"'
-          echo ${{ secrets['"'"$a"'"'] }}
+          # echo ${{ secrets['"'"$a"'"'] }}
+          e=${{ secrets[TEST1] }}
+          echo e:$e
           sleep 1
           done
