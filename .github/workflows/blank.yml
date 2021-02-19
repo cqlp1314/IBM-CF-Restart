@@ -2,7 +2,7 @@ name: IBM Cloud Auto Restart
   
 on:
   schedule:
-    - cron: '30 2 * * 1'
+    - cron: '30 20 * * 5'
   watch:
     types: started
   workflow_dispatch:
@@ -19,7 +19,19 @@ env:
   region3: ${{ secrets.region3 }}
   account3: ${{ secrets.account3 }}
   passwd3: ${{ secrets.passwd3 }}
-  appname3: ${{ secrets.appname3 }}     
+  appname3: ${{ secrets.appname3 }} 
+  region4: ${{ secrets.region4 }}
+  account4: ${{ secrets.account4 }}
+  passwd4: ${{ secrets.passwd4 }}
+  appname4: ${{ secrets.appname4 }} 
+  region5: ${{ secrets.region5 }}
+  account5: ${{ secrets.account5 }}
+  passwd5: ${{ secrets.passwd5 }}
+  appname5: ${{ secrets.appname5 }}
+  region6: ${{ secrets.region6 }}
+  account6: ${{ secrets.account6 }}
+  passwd6: ${{ secrets.passwd6 }}
+  appname6: ${{ secrets.appname6 }} 
 jobs:
   ibm-cloud-restart:
     runs-on: ubuntu-latest
@@ -32,12 +44,14 @@ jobs:
       run: |
          curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github&version=v6" | tar -zx
          sudo mv cf /usr/local/bin
-         for i in {1..3};do
+         start=1
+         end=6
+         for i in $(seq $start $end);do
          region=region${i}
          account=account${i}
          passwd=passwd${i}
          appname=appname${i}
-         cf l -a https://api.${!region}.cf.cloud.ibm.com login -u ${!account} -p ${!passwd}
-         cf rs ${!appname}
-         sleep 601
+         [[ $i -eq $start ]] && time2=600 || time2=300
+         [[ $i -eq $end ]] && export time{1,2}=0 || time1=600
+         cf l -a https://api.${!region}.cf.cloud.ibm.com login -u ${!account} -p ${!passwd} && cf rs ${!appname} && sleep $time1 || sleep $time2 
          done
